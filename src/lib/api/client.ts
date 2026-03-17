@@ -1,6 +1,8 @@
 // API Client definitions
 // The actual implementation is now in VercelProxyProvider.ts
 
+import { VercelProxyProvider } from './providers/VercelProxyProvider';
+
 export interface APIResponse<T = any> {
   success: boolean;
   data?: T;
@@ -16,3 +18,6 @@ export interface User {
   partner_name: string;
   role?: string;
 }
+
+// Singleton API client instance
+export const apiClient = new VercelProxyProvider();

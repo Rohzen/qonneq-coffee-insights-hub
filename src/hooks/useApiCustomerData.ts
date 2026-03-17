@@ -62,7 +62,7 @@ export const useApiCustomerData = () => {
     if (!isAuthenticated) return;
 
     try {
-      const response = await apiClient.getCustomer(customerId);
+      const response = await apiClient.getCustomer(String(customerId));
 
       if (response.success && response.data) {
         const customerData = response.data as CustomerData;
