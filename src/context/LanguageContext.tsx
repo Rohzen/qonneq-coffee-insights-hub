@@ -144,7 +144,7 @@ export const translations = {
     
     // Footer
     'footer.company': 'qonneq by Encodata S.r.l.',
-    'footer.address': 'Via Enrico Fermi, 20 Assago (MI) Milano - P.IVA: 13419330157',
+    'footer.address': 'Strada 4 - Palazzo Q7 - Centro Direzionale MilanoFiori - 20057 Assago (MI) - P.IVA: 13419330157',
     'footer.copyright': '© {year} qonneq. Tutti i diritti riservati.',
     'footer.privacy': 'Privacy',
     'footer.cookies': 'Cookie',
@@ -286,7 +286,7 @@ export const translations = {
     
     // Footer
     'footer.company': 'qonneq by Encodata S.r.l.',
-    'footer.address': 'Via Enrico Fermi, 20 Assago (MI) Milano - VAT: 13419330157',
+    'footer.address': 'Strada 4 - Palazzo Q7 - Centro Direzionale MilanoFiori - 20057 Assago (MI) - VAT: 13419330157',
     'footer.copyright': '© {year} qonneq. All rights reserved.',
     'footer.privacy': 'Privacy',
     'footer.cookies': 'Cookies',
@@ -428,7 +428,7 @@ export const translations = {
     
     // Footer
     'footer.company': 'qonneq by Encodata S.r.l.',
-    'footer.address': 'Via Enrico Fermi, 20 Assago (MI) Milano - NIF: 13419330157',
+    'footer.address': 'Strada 4 - Palazzo Q7 - Centro Direzionale MilanoFiori - 20057 Assago (MI) - NIF: 13419330157',
     'footer.copyright': '© {year} qonneq. Todos los derechos reservados.',
     'footer.privacy': 'Privacidad',
     'footer.cookies': 'Cookies',
@@ -570,7 +570,7 @@ export const translations = {
     
     // Footer
     'footer.company': 'qonneq by Encodata S.r.l.',
-    'footer.address': 'Via Enrico Fermi, 20 Assago (MI) Milano - USt-IdNr.: 13419330157',
+    'footer.address': 'Strada 4 - Palazzo Q7 - Centro Direzionale MilanoFiori - 20057 Assago (MI) - USt-IdNr.: 13419330157',
     'footer.copyright': '© {year} qonneq. Alle Rechte vorbehalten.',
     'footer.privacy': 'Datenschutz',
     'footer.cookies': 'Cookies',
