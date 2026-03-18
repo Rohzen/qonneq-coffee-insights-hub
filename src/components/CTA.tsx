@@ -57,7 +57,7 @@ export const CTA = () => {
     setSubmitting(true);
     try {
       // Send email using EmailJS with the provided credentials
-      const result = await emailjs.send('service_3n8fcrn', 'template_n8xowrg', {
+      const result = await emailjs.send('service_5jqldhy', 'template_n8xowrg', {
         to_email: 'matteo.zoia@encodata.com',
         from_name: data.name,
         from_email: data.email,
