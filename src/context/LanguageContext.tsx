@@ -570,7 +570,7 @@ export const translations = {
     
     // Footer
     'footer.company': 'qonneq by Encodata S.r.l.',
-    'footer.address': 'Via Enrico Fermi, 20 Assago (MI) Milano - USt-IdNr.: 13419330157',
+    'footer.address': 'Strada 4 - Palazzo Q7 - Centro Direzionale MilanoFiori - 20057 Assago (MI) - USt-IdNr.: 13419330157',
     'footer.copyright': '© {year} qonneq. Alle Rechte vorbehalten.',
     'footer.privacy': 'Datenschutz',
     'footer.cookies': 'Cookies',
