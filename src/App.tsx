@@ -11,6 +11,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
+import GuidaIot from "./pages/GuidaIot";
 import { CookieBanner } from "./components/CookieBanner";
 import { LanguageProvider } from "./context/LanguageContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -47,6 +48,7 @@ const App = () => (
               />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/cookie-policy" element={<CookiePolicy />} />
+              <Route path="/guida-iot" element={<GuidaIot />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
