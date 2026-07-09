@@ -55,12 +55,41 @@ const cards = [
 ];
 
 const GuidaIot = () => {
-  const [form, setForm] = useState({ nome: "", email: "", azienda: "" });
+  const [form, setForm] = useState({ nome: "", email: "", azienda: "", phone: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Apre il PDF in una nuova scheda
-    window.open(PDF_URL, "_blank", "noopener,noreferrer");
+    setSubmitting(true);
+    try {
+      const result = await emailjs.send(
+        "service_5jqldhy",
+        "template_n8xowrg",
+        {
+          to_email: "matteo.zoia@encodata.com",
+          from_name: form.nome,
+          from_email: form.email,
+          company: form.azienda,
+          phone: form.phone || "Non fornito",
+          message: `${LEAD_SOURCE}\n\nNome e Cognome: ${form.nome}\nEmail: ${form.email}\nAzienda: ${form.azienda}\nTelefono (ricontatto): ${form.phone || "Non fornito"}`,
+          lead_source: LEAD_SOURCE,
+        },
+        "QTwBeGH89PjccHI5t"
+      );
+
+      if (result.text === "OK") {
+        toast.success("Grazie! Ti stiamo aprendo la guida.");
+        window.open(PDF_URL, "_blank", "noopener,noreferrer");
+        setForm({ nome: "", email: "", azienda: "", phone: "" });
+      } else {
+        throw new Error("Invio email fallito");
+      }
+    } catch (err) {
+      console.error("Errore invio form guida:", err);
+      toast.error("Si è verificato un errore. Riprova.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollToForm = (e: React.MouseEvent) => {
