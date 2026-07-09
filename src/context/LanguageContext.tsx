@@ -16,6 +16,13 @@ export const translations = {
     // Navbar
     'demo.request': 'Richiedi Demo',
     'dashboard': 'Dashboard',
+    'nav.home': 'Home',
+    'nav.solutions': 'Soluzioni',
+    'nav.benefits': 'Vantaggi',
+    'nav.integrations': 'Integrazioni',
+    'nav.about': 'Chi Siamo',
+    'nav.guide': 'Guida IoT',
+    'nav.contact': 'Contatti',
     
     // Hero
     'hero.title': 'La Rivoluzione IoT per l\'HoReCa e le macchine da caffè Professionali',
@@ -158,6 +165,13 @@ export const translations = {
     // Navbar
     'demo.request': 'Request Demo',
     'dashboard': 'Control Panel',
+    'nav.home': 'Home',
+    'nav.solutions': 'Solutions',
+    'nav.benefits': 'Benefits',
+    'nav.integrations': 'Integrations',
+    'nav.about': 'About',
+    'nav.guide': 'IoT Guide',
+    'nav.contact': 'Contact',
     
     // Hero
     'hero.title': 'The IoT Revolution for HoReCa and Professional Coffee Machines',
@@ -300,6 +314,13 @@ export const translations = {
     // Navbar
     'demo.request': 'Solicitar Demo',
     'dashboard': 'Panel de Control',
+    'nav.home': 'Inicio',
+    'nav.solutions': 'Soluciones',
+    'nav.benefits': 'Ventajas',
+    'nav.integrations': 'Integraciones',
+    'nav.about': 'Quiénes Somos',
+    'nav.guide': 'Guía IoT',
+    'nav.contact': 'Contacto',
     
     // Hero
     'hero.title': 'La Revolución IoT para HoReCa y Máquinas de Café Profesionales',
@@ -442,6 +463,13 @@ export const translations = {
     // Navbar
     'demo.request': 'Demo anfordern',
     'dashboard': 'Kontrollzentrum',
+    'nav.home': 'Home',
+    'nav.solutions': 'Lösungen',
+    'nav.benefits': 'Vorteile',
+    'nav.integrations': 'Integrationen',
+    'nav.about': 'Über uns',
+    'nav.guide': 'IoT-Leitfaden',
+    'nav.contact': 'Kontakt',
     
     // Hero
     'hero.title': 'Die IoT-Revolution für HoReCa und professionelle Kaffeemaschinen',
