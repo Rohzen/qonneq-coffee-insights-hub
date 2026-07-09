@@ -3,7 +3,10 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import emailjs from "emailjs-com";
+import { toast } from "@/components/ui/sonner";
 import heroImage from "@/assets/guida-iot-hero.jpg.asset.json";
+import pdfAsset from "@/assets/guida-iot-pdf.asset.json";
 import {
   AlertTriangle,
   LineChart,
@@ -15,7 +18,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const PDF_URL = "/guida-iot.pdf"; // Placeholder: sostituire con il PDF finale
+const PDF_URL = pdfAsset.url;
+const LEAD_SOURCE = "Lead from Guida IoT Connect";
 
 const cards = [
   {
@@ -51,12 +55,41 @@ const cards = [
 ];
 
 const GuidaIot = () => {
-  const [form, setForm] = useState({ nome: "", email: "", azienda: "" });
+  const [form, setForm] = useState({ nome: "", email: "", azienda: "", phone: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Apre il PDF in una nuova scheda
-    window.open(PDF_URL, "_blank", "noopener,noreferrer");
+    setSubmitting(true);
+    try {
+      const result = await emailjs.send(
+        "service_5jqldhy",
+        "template_n8xowrg",
+        {
+          to_email: "matteo.zoia@encodata.com",
+          from_name: form.nome,
+          from_email: form.email,
+          company: form.azienda,
+          phone: form.phone || "Non fornito",
+          message: `${LEAD_SOURCE}\n\nNome e Cognome: ${form.nome}\nEmail: ${form.email}\nAzienda: ${form.azienda}\nTelefono (ricontatto): ${form.phone || "Non fornito"}`,
+          lead_source: LEAD_SOURCE,
+        },
+        "QTwBeGH89PjccHI5t"
+      );
+
+      if (result.text === "OK") {
+        toast.success("Grazie! Ti stiamo aprendo la guida.");
+        window.open(PDF_URL, "_blank", "noopener,noreferrer");
+        setForm({ nome: "", email: "", azienda: "", phone: "" });
+      } else {
+        throw new Error("Invio email fallito");
+      }
+    } catch (err) {
+      console.error("Errore invio form guida:", err);
+      toast.error("Si è verificato un errore. Riprova.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -163,14 +196,14 @@ const GuidaIot = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="nome" className="text-white">
-                  Nome
+                  Nome e Cognome
                 </Label>
                 <Input
                   id="nome"
                   required
                   value={form.nome}
                   onChange={(e) => setForm({ ...form, nome: e.target.value })}
-                  placeholder="Il tuo nome"
+                  placeholder="Il tuo nome e cognome"
                   className="bg-white/10 border-white/20 placeholder:text-white/50 text-white"
                 />
               </div>
@@ -206,12 +239,27 @@ const GuidaIot = () => {
                 />
               </div>
 
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-white">
+                  Se vuoi essere ricontattato, lascia il tuo numero
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  placeholder="+39 ..."
+                  className="bg-white/10 border-white/20 placeholder:text-white/50 text-white"
+                />
+              </div>
+
               <Button
                 type="submit"
+                disabled={submitting}
                 className="w-full bg-qonneq-accent hover:bg-qonneq-purple py-6 text-lg font-medium"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Scarica la guida
+                {submitting ? "Invio in corso..." : "Scarica la guida"}
               </Button>
             </form>
           </div>
