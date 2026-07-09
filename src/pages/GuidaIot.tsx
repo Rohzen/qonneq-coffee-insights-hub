@@ -3,7 +3,10 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import emailjs from "emailjs-com";
+import { toast } from "@/components/ui/sonner";
 import heroImage from "@/assets/guida-iot-hero.jpg.asset.json";
+import pdfAsset from "@/assets/guida-iot-pdf.asset.json";
 import {
   AlertTriangle,
   LineChart,
@@ -15,7 +18,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const PDF_URL = "/guida-iot.pdf"; // Placeholder: sostituire con il PDF finale
+const PDF_URL = pdfAsset.url;
+const LEAD_SOURCE = "Lead from Guida IoT Connect";
 
 const cards = [
   {
