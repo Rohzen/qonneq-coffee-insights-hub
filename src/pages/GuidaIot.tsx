@@ -72,11 +72,11 @@ const GuidaIot = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Immagine a sinistra */}
             <div className="order-2 lg:order-1 flex justify-center">
-              <div className="aspect-[4/3] w-full max-w-md rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl flex items-center justify-center">
+              <div className="w-full max-w-sm rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl flex items-center justify-center p-4">
                 <img
                   src={heroImage.url}
                   alt="Guida IoT per macchine da caffè"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
