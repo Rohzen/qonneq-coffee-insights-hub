@@ -196,14 +196,14 @@ const GuidaIot = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="nome" className="text-white">
-                  Nome
+                  Nome e Cognome
                 </Label>
                 <Input
                   id="nome"
                   required
                   value={form.nome}
                   onChange={(e) => setForm({ ...form, nome: e.target.value })}
-                  placeholder="Il tuo nome"
+                  placeholder="Il tuo nome e cognome"
                   className="bg-white/10 border-white/20 placeholder:text-white/50 text-white"
                 />
               </div>
@@ -239,12 +239,27 @@ const GuidaIot = () => {
                 />
               </div>
 
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-white">
+                  Se vuoi essere ricontattato, lascia il tuo numero
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  placeholder="+39 ..."
+                  className="bg-white/10 border-white/20 placeholder:text-white/50 text-white"
+                />
+              </div>
+
               <Button
                 type="submit"
+                disabled={submitting}
                 className="w-full bg-qonneq-accent hover:bg-qonneq-purple py-6 text-lg font-medium"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Scarica la guida
+                {submitting ? "Invio in corso..." : "Scarica la guida"}
               </Button>
             </form>
           </div>
