@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import heroImage from "@/assets/guida-iot-hero.jpg.asset.json";
 import {
   AlertTriangle,
   LineChart,
@@ -73,7 +74,7 @@ const GuidaIot = () => {
             <div className="order-2 lg:order-1">
               <div className="aspect-[4/5] w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl flex items-center justify-center">
                 <img
-                  src="/placeholder.svg"
+                  src={heroImage.url}
                   alt="Guida IoT per macchine da caffè"
                   className="w-full h-full object-cover"
                 />
